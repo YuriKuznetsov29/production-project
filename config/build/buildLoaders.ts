@@ -34,8 +34,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 loader: 'css-loader',
                 options: {
                     modules: {
-                    // включает css модули для файлов в пути которых содержится .module
-                    // остальные  файлы можно импортировать и использовать  как обычно
+                        // включает css модули для файлов в пути которых содержится .module
+                        // остальные  файлы можно импортировать и использовать  как обычно
                         auto: (resPath: string) => Boolean(resPath.includes('.module')),
                         // генерирует читаемые пути в дев режиме
                         localIdentName: isDev
@@ -48,10 +48,22 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    }
+
     // Порядок подключения лоадеров имеет значениет
     return [
         fileLoader,
         svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
     ];

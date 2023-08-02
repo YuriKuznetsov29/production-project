@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames'
 
 import './Loader.scss'
 
@@ -8,7 +8,7 @@ interface LoaderProps {
 
 export const Loader = ({ className }: LoaderProps) => {
     return (
-        <div className={classNames('lds-ellipsis', {}, [className])} >
+        <div className={classNames('lds-ellipsis', {}, [className])}>
             <div />
             <div />
             <div />

@@ -39,6 +39,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
+                ignoreAttribute: ['data-testid'],
             },
         ],
         'arrow-body-style': 0,
@@ -46,4 +47,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 }

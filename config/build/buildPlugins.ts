@@ -29,7 +29,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     ]
 
     if (isDev) {
-        plugins.push(new WebpackPluginServe({}), new ReactRefreshWebpackPlugin({}))
+        plugins.push(new WebpackPluginServe({}))
+        plugins.push(new ReactRefreshWebpackPlugin({}))
     }
 
     return plugins

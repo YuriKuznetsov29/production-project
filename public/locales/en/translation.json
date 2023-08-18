@@ -2,9 +2,11 @@
   "тестовый пример": "test example",
   "Перевод": "Translate",
   "Русский": "English",
-  "О сайте": "AboutPage",
+  "О сайте": "About",
   "Главная страница": "MainPage",
   "страница не найдена": "page not found",
   "Произошла непредвиденная ошибка": "Something went wrong",
-  "Обновить страницу": "Reload page"
+  "Обновить страницу": "Reload page",
+  "Главная": "Main",
+  "toggle": "toggle"
 }

@@ -12,6 +12,7 @@ export function useTheme(): UseThemeResult {
     const toggleTheme = () => {
         const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
         setTheme(newTheme)
+        // document.body.className = newTheme лучше было напрямую вешать глобальный класс с темой на body
         localStorage.setItem('theme', newTheme)
     }
 

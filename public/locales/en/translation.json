@@ -11,5 +11,6 @@
   "toggle": "toggle",
   "Короткий язык": "En",
   "Введите логин": "Input login",
-  "Введите пароль": "Input password"
+  "Введите пароль": "Input password",
+  "Выйти": "Exit"
 }

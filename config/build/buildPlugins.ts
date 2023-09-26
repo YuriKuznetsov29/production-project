@@ -10,7 +10,11 @@ import { BuildOptions } from './types/config'
 // например HtmlWebpackPlugin позволяет генерировать
 // html файл в папку build, минимизируя его и сразу подключая
 // js файл через тег script
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({
+    paths,
+    isDev,
+    apiUrl,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -22,6 +26,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
         new BundleAnalyzerPlugin({
             openAnalyzer: false,

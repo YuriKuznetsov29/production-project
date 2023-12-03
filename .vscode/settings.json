@@ -1,3 +1,8 @@
 {
-    "i18next.i18nPaths": "d:/webdev/practice/production-project/public/locales,d:/webdev/practice/production-project/src/shared/config/i18n"
+    "i18next.i18nPaths": "d:/webdev/practice/production-project/public/locales,d:/webdev/practice/production-project/src/shared/config/i18n",
+    "i18n-ally.localesPaths": [
+        "public/locales",
+        "src/shared/config/i18n"
+    ],
+    "react-i18n.i18nPaths": "public\\locales,src\\shared\\config\\i18n"
 }

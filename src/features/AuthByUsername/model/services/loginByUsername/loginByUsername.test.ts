@@ -5,13 +5,23 @@ import { userActions } from 'entities/User'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { loginByUsername } from './loginByUsername'
 
-jest.mock('axios')
+jest.mock('axios', () => {
+    return {
+        create: jest.fn(() => ({
+            get: jest.fn(),
+            interceptors: {
+                request: { use: jest.fn(), eject: jest.fn() },
+                response: { use: jest.fn(), eject: jest.fn() },
+            },
+        })),
+    }
+})
 
 const mockedAxios = jest.mocked(axios, true)
 
 describe('loginByUsername.test', () => {
-    // let dispatch: Dispatch
-    // let getState: () => StateSchema
+    let dispatch: Dispatch
+    let getState: () => StateSchema
 
     // beforeEach(() => {
     //     dispatch = jest.fn()
@@ -46,7 +56,7 @@ describe('loginByUsername.test', () => {
         const userValue = { username: '123', id: '1' }
 
         const thunk = new TestAsyncThunk(loginByUsername)
-        thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }))
+        thunk.api.post = jest.fn().mockReturnValue(Promise.resolve({ data: userValue }))
 
         const result = await thunk.callThunk({ username: '123', password: '123' })
 

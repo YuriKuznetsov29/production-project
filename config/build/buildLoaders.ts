@@ -1,10 +1,13 @@
 import webpack from 'webpack'
 import { BuildOptions } from './types/config'
 import { buildCssLoader } from './loaders/buildCssLoaders'
+import { buildBabelLoader } from './loaders/buildBabelLoader'
 
 // лоадеры позволяют использовать файлы отличные от .js
 // например использовать ts или импорты css прямо в js файл
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -28,17 +31,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev)
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
-            },
-        },
-    }
+    const babelLoader = buildBabelLoader(options)
 
     // Порядок подключения лоадеров имеет значениет
     return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]

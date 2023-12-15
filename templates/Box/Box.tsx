@@ -1,12 +1,11 @@
-import React, { FC } from 'react';
-import styles from './Box.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames'
 
-interface BoxProps {}
+import cls from './Box.module.scss'
 
-const Box: FC<BoxProps> = () => (
-  <div className={styles.Box} data-testid="Box">
-    Box Component
-  </div>
-);
+interface BoxProps {
+    className?: string
+}
 
-export default Box;
+export const Box = ({ className }: BoxProps) => {
+    return <div className={classNames(cls.Box, {}, [className])}></div>
+}

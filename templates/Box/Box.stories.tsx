@@ -1,12 +1,12 @@
 /* eslint-disable */
-import Box from './Box';
+import Box from './Box'
 
 export default {
-  title: "Box",
-};
+    title: 'Box',
+}
 
-export const Default = () => <Box />;
+export const Default = () => <Box />
 
 Default.story = {
-  name: 'default',
-};
+    name: 'default',
+}

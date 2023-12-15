@@ -18,6 +18,21 @@
       "postId": "1"
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "123",
+      "subtitle": "123",
+      "img": "https://1213",
+      "views": "1234",
+      "createdAt": "26:06:2014",
+      "type": ["it"],
+      "blocks": [
+
+      ],
+      "code": "123"
+    }
+  ],
   "users": [
     {
       "id": "1",

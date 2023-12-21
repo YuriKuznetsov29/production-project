@@ -1,11 +1,20 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-
+import { memo } from 'react'
+import { ArticleCodeBlock } from 'entities/Article/model/types/Article'
+import { Code } from 'shared/ui/Code/Code'
 import cls from './ArticleCodeBlockComponent.module.scss'
 
 interface ArticleCodeBlockComponentProps {
     className?: string
+    block: ArticleCodeBlock
 }
 
-export const ArticleCodeBlockComponent = ({ className }: ArticleCodeBlockComponentProps) => {
-    return <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>123</div>
-}
+export const ArticleCodeBlockComponent = memo(
+    ({ className, block }: ArticleCodeBlockComponentProps) => {
+        return (
+            <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
+                <Code>{block.code}</Code>
+            </div>
+        )
+    }
+)

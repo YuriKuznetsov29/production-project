@@ -25,6 +25,7 @@ import cls from './ArticleDetails.module.scss'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlocksComponent } from '../ArticleImageBlocksComponent/ArticleImageBlocksComponent'
 import { ArticleTextBlocksComponent } from '../ArticleTextBlocksComponent/ArticleTextBlocksComponent'
+import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
     className?: string

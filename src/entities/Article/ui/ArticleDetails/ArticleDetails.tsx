@@ -25,6 +25,7 @@ import cls from './ArticleDetails.module.scss'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlocksComponent } from '../ArticleImageBlocksComponent/ArticleImageBlocksComponent'
 import { ArticleTextBlocksComponent } from '../ArticleTextBlocksComponent/ArticleTextBlocksComponent'
+import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
     className?: string
@@ -46,11 +47,25 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
             case ArticleBlockType.CODE:
-                return <ArticleCodeBlockComponent className={cls.block} block={block} />
+                return (
+                    <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />
+                )
             case ArticleBlockType.IMAGE:
-                return <ArticleImageBlocksComponent className={cls.block} block={block} />
+                return (
+                    <ArticleImageBlocksComponent
+                        key={block.id}
+                        className={cls.block}
+                        block={block}
+                    />
+                )
             case ArticleBlockType.TEXT:
-                return <ArticleTextBlocksComponent className={cls.block} block={block} />
+                return (
+                    <ArticleTextBlocksComponent
+                        key={block.id}
+                        className={cls.block}
+                        block={block}
+                    />
+                )
 
             default:
                 return null
@@ -58,7 +73,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }, [])
 
     useEffect(() => {
-        dispatch(fetchArticleById(id))
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id))
+        }
     }, [dispatch, id])
 
     let content

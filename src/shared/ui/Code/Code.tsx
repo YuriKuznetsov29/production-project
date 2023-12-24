@@ -1,18 +1,25 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ReactNode, memo } from 'react'
+import { memo, useCallback } from 'react'
+import CopyIcon from 'shared/assets/icons/copy-20-20.svg'
+import { Button, ButtonTheme } from '../Button/Button'
 import cls from './Code.module.scss'
-import { Button } from '../Button/Button'
 
 interface CodeProps {
     className?: string
-    children: ReactNode
+    text: string
 }
 
-export const Code = memo(({ className, children }: CodeProps) => {
+export const Code = memo(({ className, text }: CodeProps) => {
+    const onCopy = useCallback(() => {
+        navigator.clipboard.writeText(text)
+    }, [text])
+
     return (
         <pre className={classNames(cls.Code, {}, [className])}>
-            <Button className={cls.copyBtn}>Копировать</Button>
-            <code>{children}</code>
+            <Button className={cls.copyBtn} onClick={onCopy} theme={ButtonTheme.CLEAR}>
+                <CopyIcon className={cls.copyIcon} />
+            </Button>
+            <code>{text}</code>
         </pre>
     )
 })

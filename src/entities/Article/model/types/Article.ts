@@ -36,7 +36,7 @@ export interface Article {
     subtitle: string
     img: string
     views: number
-    createdAt: '26:06:2014'
+    createdAt: string
     type: ArticleType[]
     blocks: ArticleBlock[]
 }

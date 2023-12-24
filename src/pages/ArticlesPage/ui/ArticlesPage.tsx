@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import { memo } from 'react'
-import { ArticleDetails } from 'entities/Article'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {

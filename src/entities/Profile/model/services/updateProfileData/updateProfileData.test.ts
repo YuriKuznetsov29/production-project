@@ -2,7 +2,6 @@ import axios from 'axios'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import exp from 'constants'
 import { updateProfileData } from './updateProfileData'
 import { ValidateProfileError } from '../../types/profile'
 
@@ -18,6 +17,7 @@ const data = {
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,
+    id: '1',
 }
 
 describe('updateProfileData.test', () => {

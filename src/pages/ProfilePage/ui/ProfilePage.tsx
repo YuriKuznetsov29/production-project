@@ -23,9 +23,9 @@ import { Country } from 'entities/Country/model/types/country'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
-import { useParams } from 'react-router-dom'
 
 const reducers: ReducerList = {
     profile: profileReducer,

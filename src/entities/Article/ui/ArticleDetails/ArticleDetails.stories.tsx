@@ -81,6 +81,10 @@ const article: Article = {
             ],
         },
     ],
+    user: {
+        id: '1',
+        username: '123',
+    },
 }
 
 export const Normal = Template.bind({})

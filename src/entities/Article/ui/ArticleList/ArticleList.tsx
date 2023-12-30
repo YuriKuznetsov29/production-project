@@ -14,10 +14,10 @@ export const ArticleList = (props: ArticleListProps) => {
     const { articles, className, isLoading, view = ArticleView.SMALL } = props
 
     const renderArticle = (article: Article) => {
-        return <ArticleListItem article={article} view={view} />
+        return <ArticleListItem article={article} view={view} className={cls.card} />
     }
     return (
-        <div className={classNames(cls.ArticleList, {}, [className])}>
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length ? articles.map(renderArticle) : null}
         </div>
     )

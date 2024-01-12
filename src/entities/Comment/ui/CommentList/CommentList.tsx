@@ -28,7 +28,9 @@ export const CommentList = (props: CommentListProps) => {
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length ? (
-                comments.map((comment) => <CommentCard className={cls.comment} comment={comment} />)
+                comments.map((comment) => (
+                    <CommentCard key={comment.id} className={cls.comment} comment={comment} />
+                ))
             ) : (
                 <Text text={t('Комментарии отсутствуют')} />
             )}

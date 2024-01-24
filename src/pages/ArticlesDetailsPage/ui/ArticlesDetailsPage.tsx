@@ -23,7 +23,7 @@ import { getArticleCommentsIsLoading } from '../model/selectors/comments'
 import { fetchCommentByArticleId } from '../model/services/fetchCommentByArticleId/fetchCommentByArticleId'
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
 import cls from './ArticlesDetailsPage.module.scss'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 interface ArticlesDetailsPageProps {
     className?: string

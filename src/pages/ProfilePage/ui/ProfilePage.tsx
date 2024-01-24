@@ -26,7 +26,7 @@ import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEff
 import { useParams } from 'react-router-dom'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 const reducers: ReducerList = {
     profile: profileReducer,

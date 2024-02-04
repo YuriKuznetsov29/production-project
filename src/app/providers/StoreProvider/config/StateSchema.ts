@@ -14,6 +14,7 @@ import { LoginSchema } from 'features/AuthByUsername'
 import { UISchema } from 'features/UI/model/types/UISchema'
 import { AddCommentFormSchema } from 'features/addCommentForm'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage'
+import { ArticleDetailsPageRecommendationsSchema } from 'pages/ArticlesDetailsPage/model/types/articleDetailsPageRecommendationsSlice'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
 import { NavigateOptions, To } from 'react-router-dom'
 
@@ -26,6 +27,7 @@ export interface StateSchema {
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
+    articleDetailsRecommendations?: ArticleDetailsPageRecommendationsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
 }

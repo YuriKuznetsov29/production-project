@@ -30,14 +30,14 @@ import {
 } from '../model/slice/articleDetailsPageRecommendationsSlice'
 import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations'
 import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations'
+import { articleDetailsPageReducer } from '../model/slice'
 
 interface ArticlesDetailsPageProps {
     className?: string
 }
 
 const reducers: ReducerList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
+    articlesDetailsPage: articleDetailsPageReducer,
 }
 
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
@@ -82,7 +82,12 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
                 </Button>
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} className={cls.commentTitle} text={t('Рекомендуем')} />
-                <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} />
+                <ArticleList
+                    className={cls.recommendations}
+                    articles={recommendations}
+                    isLoading={recommendationsIsLoading}
+                    target="_blank"
+                />
                 <Text size={TextSize.L} className={cls.commentTitle} text={t('Комментарии')} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />

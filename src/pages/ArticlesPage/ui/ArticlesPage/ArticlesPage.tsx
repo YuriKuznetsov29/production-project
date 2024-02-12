@@ -24,6 +24,7 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import cls from './ArticlesPage.module.scss'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { useSearchParams } from 'react-router-dom'
+import { AutoSizer, List } from 'react-virtualized'
 
 interface ArticlesPageProps {
     className?: string

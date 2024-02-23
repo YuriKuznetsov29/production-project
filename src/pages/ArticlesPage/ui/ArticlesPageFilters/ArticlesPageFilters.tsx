@@ -21,12 +21,12 @@ import { Select } from 'shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input'
 import { Card } from 'shared/ui/Card/Card'
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article'
+import { ArticleSortField, ArticleType } from 'entities/Article/model/types/Article'
 import { SortOrder } from 'shared/types'
-import cls from './ArticlesPageFilters.module.scss'
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hook/useDebounce/useDebounce'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
+import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {
     className?: string

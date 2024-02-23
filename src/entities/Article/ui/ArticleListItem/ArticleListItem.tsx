@@ -6,14 +6,13 @@ import { Card } from 'shared/ui/Card/Card'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
-import { HTMLAttributeAnchorTarget, useCallback } from 'react'
+import { HTMLAttributeAnchorTarget } from 'react'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/Article'
 import { ArticleTextBlocksComponent } from '../ArticleTextBlocksComponent/ArticleTextBlocksComponent'
 import { ArticleListItemSkeleton } from './ArticleListItemSkeleton'
 import cls from './ArticleListItem.module.scss'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
 
 interface ArticleListItemProps {
     className?: string

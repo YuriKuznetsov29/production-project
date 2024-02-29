@@ -2,17 +2,16 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Text } from 'shared/ui/Text/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
-import {
-    getProfileData,
-    getProfileReadonly,
-    profileActions,
-    updateProfileData,
-} from 'entities/Profile'
+import { useSelector } from 'react-redux'
+
 import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from 'entities/User'
 import { HStack } from 'shared/ui/Stack/HStack/HStack'
+import { updateProfileData } from 'features/editableProfileCard/model/services/updateProfileData/updateProfileData'
+import { profileActions } from 'features/editableProfileCard/model/slice/profileSlice'
+import { getProfileReadonly } from 'features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly'
+import { getProfileData } from 'features/editableProfileCard/model/selectors/getProfileData/getProfileData'
 
 interface ProfilePageHeaderProps {
     className?: string

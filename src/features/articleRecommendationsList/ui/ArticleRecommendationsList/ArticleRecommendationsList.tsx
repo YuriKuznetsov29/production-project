@@ -5,27 +5,11 @@ import cls from './ArticleRecommendationsList.module.scss'
 import { ArticleList } from 'entities/Article'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import { VStack } from 'shared/ui/Stack'
-import { rtkApi } from 'shared/api/rtkApi'
+import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsListProps {
     className?: string
 }
-
-const recommendationsApi = rtkApi.injectEndpoints({
-    endpoints: (build) => ({
-        getArticleRecommendationsList: build.query({
-            query: (limit) => ({
-                url: '/articles',
-                params: {
-                    _limit: limit || 4,
-                },
-            }),
-        }),
-    }),
-    overrideExisting: false,
-})
-
-const useArticleRecommendationsList = recommendationsApi.useGetArticleRecommendationsListQuery
 
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props

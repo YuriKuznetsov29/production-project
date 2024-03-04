@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
+import { VStack } from 'shared/ui/Stack'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 
 interface ArticleDetailsCommentsProps {
@@ -36,14 +37,10 @@ export const ArticleDetailsComments = ({ className, id }: ArticleDetailsComments
     })
 
     return (
-        <>
-            <Text
-                size={TextSize.L}
-                // className={cls.commentTitle}
-                text={t('Комментарии')}
-            />
+        <VStack gap="16">
+            <Text size={TextSize.L} text={t('Комментарии')} />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList comments={comments} isLoading={commentsIsLoading} />
-        </>
+        </VStack>
     )
 }

@@ -25,6 +25,8 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { EditableProfileCardHeader } from './EditableProfileCardHeader/EditableProfileCardHeader'
+import { VStack } from 'shared/ui/Stack'
 
 interface EditableProfileCardProps {
     className?: string
@@ -118,24 +120,32 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            {validateErrors?.length &&
-                validateErrors.map((err) => (
-                    <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
-                ))}
-            <ProfileCard
-                data={formData}
-                isLoading={isLoading}
-                error={error}
-                readonly={readonly}
-                onChangeFirstName={onChangeFirstName}
-                onChangeLastName={onChangeLastName}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeUsername={onChangeUsername}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            <VStack gap="8" max>
+                <EditableProfileCardHeader />
+                {validateErrors?.length &&
+                    validateErrors.map((err) => (
+                        <Text
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslates[err]}
+                            data-testid={'EditableProfileCard.Error'}
+                        />
+                    ))}
+                <ProfileCard
+                    data={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    readonly={readonly}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                />
+            </VStack>
         </DynamicModuleLoader>
     )
 })

@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 import { Page } from 'widgets/Page/Page'
 import { VStack } from 'shared/ui/Stack/VStack/VStack'
@@ -23,8 +22,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <Page className={classNames(cls.ProfilePage, {}, [className])}>
             <VStack gap="16" max>
-                <ProfilePageHeader />
-
                 <EditableProfileCard id={id} />
             </VStack>
         </Page>

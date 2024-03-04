@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEff
 import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage'
 import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 import { useTranslation } from 'react-i18next'
+import { Text } from 'shared/ui/Text/Text'
 
 interface ArticleInfiniteListProps {
     className?: string
@@ -32,7 +33,7 @@ export const ArticleInfiniteList = ({ className }: ArticleInfiniteListProps) => 
     const view = useSelector(getArticlesPageView)
 
     if (error) {
-        return <div>{t('Произошла ошибка при загрузке данных')}</div>
+        return <Text text={t('Произошла ошибка при загрузке данных')} />
     }
 
     return (

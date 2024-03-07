@@ -9,17 +9,9 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useSelector } from 'react-redux'
-import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
-import { AddCommentForm } from 'features/addCommentForm'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
-import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice'
-import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
-import { fetchCommentByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId'
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
+
 import cls from './ArticlesDetailsPage.module.scss'
 import { Page } from 'widgets/Page/Page'
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticeDetailsPageHeader'
 import { VStack } from 'shared/ui/Stack'
@@ -37,14 +29,6 @@ const reducers: ReducerList = {
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     const { t } = useTranslation('article-details')
     const { id } = useParams<{ id: string }>()
-
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-                {t('Статья не найдена')}
-            </Page>
-        )
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

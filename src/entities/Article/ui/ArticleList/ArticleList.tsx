@@ -77,6 +77,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
             {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
                 <div
+                    //@ts-ignore
                     ref={registerChild}
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 >

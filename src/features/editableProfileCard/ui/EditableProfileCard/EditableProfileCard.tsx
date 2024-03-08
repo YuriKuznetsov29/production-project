@@ -20,7 +20,7 @@ import {
     profileReducer,
 } from 'features/editableProfileCard/model/slice/profileSlice'
 import { ProfileCard } from 'entities/Profile'
-import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema'
+import { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts'
 import {
     DynamicModuleLoader,
     ReducerList,

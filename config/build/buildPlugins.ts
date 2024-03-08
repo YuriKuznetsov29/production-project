@@ -30,9 +30,9 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
+        // new BundleAnalyzerPlugin({
+        //     openAnalyzer: false,
+        // }),
     ]
 
     if (isDev) {

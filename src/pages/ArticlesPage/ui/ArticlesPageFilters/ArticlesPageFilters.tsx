@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
@@ -21,7 +20,7 @@ import { Select } from 'shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input'
 import { Card } from 'shared/ui/Card/Card'
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/Article'
+import { ArticleType, ArticleSortField } from 'entities/Article'
 import { SortOrder } from 'shared/types'
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hook/useDebounce/useDebounce'

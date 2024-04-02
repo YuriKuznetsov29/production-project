@@ -31,8 +31,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev)
 
-    const babelLoader = buildBabelLoader(options)
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
     // Порядок подключения лоадеров имеет значениет
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
+    return [fileLoader, svgLoader, codeBabelLoader, tsxCodeBabelLoader, typescriptLoader, cssLoader]
 }

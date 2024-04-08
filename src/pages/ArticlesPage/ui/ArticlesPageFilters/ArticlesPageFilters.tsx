@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articles.PageSelectors'
+} from '@/pages/ArticlesPage/model/selectors/articles.PageSelectors'
 import { useSelector } from 'react-redux'
 import { useCallback, useMemo } from 'react'
 import {
@@ -13,18 +13,18 @@ import {
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
-} from 'entities/Article'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlePageSlice'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
-import { Select } from 'shared/ui/Select/Select'
+} from '@/entities/Article'
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlePageSlice'
+import { useAppDispatch } from '@/shared/lib/hook/useAppDispatch/useAppDispatch'
+import { Select } from '@/shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
-import { Input } from 'shared/ui/Input/Input'
-import { Card } from 'shared/ui/Card/Card'
-import { ArticleType, ArticleSortField } from 'entities/Article'
-import { SortOrder } from 'shared/types'
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
-import { useDebounce } from 'shared/lib/hook/useDebounce/useDebounce'
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
+import { Input } from '@/shared/ui/Input/Input'
+import { Card } from '@/shared/ui/Card/Card'
+import { ArticleType, ArticleSortField } from '@/entities/Article'
+import { SortOrder } from '@/shared/types'
+import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+import { useDebounce } from '@/shared/lib/hook/useDebounce/useDebounce'
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
 import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {

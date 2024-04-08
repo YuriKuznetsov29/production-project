@@ -1,21 +1,21 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import { ArticleDetails, ArticleList } from 'entities/Article'
+import { ArticleDetails, ArticleList } from '@/entities/Article'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Text, TextSize } from 'shared/ui/Text/Text'
-import { CommentList } from 'entities/Comment'
+import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { CommentList } from '@/entities/Comment'
 import {
     DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import cls from './ArticlesDetailsPage.module.scss'
-import { Page } from 'widgets/Page/Page'
+import { Page } from '@/widgets/Page/Page'
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticeDetailsPageHeader'
-import { VStack } from 'shared/ui/Stack'
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
+import { VStack } from '@/shared/ui/Stack'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 
 interface ArticlesDetailsPageProps {

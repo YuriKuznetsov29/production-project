@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useCallback } from 'react'
 import {
     DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hook/useAppDispatch/useAppDispatch'
 
-import { Page } from 'widgets/Page/Page'
+import { Page } from '@/widgets/Page/Page'
 import { articlesPageReducer } from '../../model/slices/articlePageSlice'
 
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'

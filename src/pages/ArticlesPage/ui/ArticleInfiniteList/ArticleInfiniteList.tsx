@@ -1,17 +1,17 @@
-import { ArticleList } from 'entities/Article'
+import { ArticleList } from '@/entities/Article'
 import { useSelector } from 'react-redux'
-import { getArticles } from 'pages/ArticlesPage/model/slices/articlePageSlice'
+import { getArticles } from '@/pages/ArticlesPage/model/slices/articlePageSlice'
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articles.PageSelectors'
+} from '@/pages/ArticlesPage/model/selectors/articles.PageSelectors'
 import { useSearchParams } from 'react-router-dom'
-import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hook/useInitialEffect/useInitialEffect'
+import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage'
+import { useAppDispatch } from '@/shared/lib/hook/useAppDispatch/useAppDispatch'
 import { useTranslation } from 'react-i18next'
-import { Text } from 'shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface ArticleInfiniteListProps {
     className?: string

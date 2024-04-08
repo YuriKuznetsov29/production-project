@@ -6,17 +6,17 @@ import {
     Reducer,
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
-import { ArticleDetailsSchema } from 'entities/Article'
-import { CounterSchema } from 'entities/Counter'
-import { UserSchema } from 'entities/User'
-import { LoginSchema } from 'features/AuthByUsername'
-import { UISchema } from 'features/UI/model/types/UISchema'
-import { AddCommentFormSchema } from 'features/addCommentForm'
-import { ProfileSchema } from 'features/editableProfileCard'
-import { ArticleDetailsPageSchema } from 'pages/ArticlesDetailsPage'
-import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { ArticleDetailsSchema } from '@/entities/Article'
+import { CounterSchema } from '@/entities/Counter'
+import { UserSchema } from '@/entities/User'
+import { LoginSchema } from '@/features/AuthByUsername'
+import { UISchema } from '@/features/UI/model/types/UISchema'
+import { AddCommentFormSchema } from '@/features/addCommentForm'
+import { ProfileSchema } from '@/features/editableProfileCard'
+import { ArticleDetailsPageSchema } from '@/pages/ArticlesDetailsPage'
+import { ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { NavigateOptions, To } from 'react-router-dom'
-import { rtkApi } from 'shared/api/rtkApi'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 export interface StateSchema {
     counter: CounterSchema

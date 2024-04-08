@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui/Text/Text'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Text } from '@/shared/ui/Text/Text'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { Comment } from '../../model/type/comment'
 import cls from './CommentCard.module.scss'
-import { VStack } from 'shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
 
 interface CommentCardProps {
     className?: string

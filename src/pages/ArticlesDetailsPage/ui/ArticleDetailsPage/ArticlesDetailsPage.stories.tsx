@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Article, ArticleType } from 'entities/Article'
-import { ArticleBlockType } from 'entities/Article/model/consts/consts'
+import { Article, ArticleType } from '@/entities/Article'
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts'
 import ArticlesDetailsPage from './ArticlesDetailsPage'
 
 export default {

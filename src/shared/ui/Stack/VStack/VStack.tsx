@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './VStack.module.scss'
 import { Flex, FlexProps } from '../Flex/Flex'

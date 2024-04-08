@@ -1,28 +1,28 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
+import { useAppDispatch } from '@/shared/lib/hook/useAppDispatch/useAppDispatch'
 import { memo, useCallback, useEffect } from 'react'
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById'
+import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDetails'
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
+} from '@/entities/Article/model/selectors/articleDetails'
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
-import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
-import { Icon } from 'shared/ui/Icon/Icon'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
+import { Icon } from '@/shared/ui/Icon/Icon'
+import { HStack, VStack } from '@/shared/ui/Stack'
 import { ArticleBlock } from '../../model/types/Article'
-import { ArticleBlockType } from 'entities/Article/model/consts/consts'
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlocksComponent } from '../ArticleImageBlocksComponent/ArticleImageBlocksComponent'
 import { ArticleTextBlocksComponent } from '../ArticleTextBlocksComponent/ArticleTextBlocksComponent'

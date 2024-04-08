@@ -1,32 +1,32 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import cls from './EditableProfileCard.module.scss'
 import { memo, useCallback } from 'react'
 
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hook/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { useInitialEffect } from 'shared/lib/hook/useInitialEffect/useInitialEffect'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
-import { getProfileForm } from 'features/editableProfileCard/model/selectors/getProfileForm/getProfileForm'
-import { getProfileError } from 'features/editableProfileCard/model/selectors/getProfileError/getProfileError'
-import { getProfileIsLoading } from 'features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading'
-import { getProfileReadonly } from 'features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly'
-import { getProfileValidateErrors } from 'features/editableProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
-import { fetchProfileData } from 'features/editableProfileCard/model/services/fetchProfileData/fetchProfileData'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { useInitialEffect } from '@/shared/lib/hook/useInitialEffect/useInitialEffect'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
+import { getProfileForm } from '@/features/editableProfileCard/model/selectors/getProfileForm/getProfileForm'
+import { getProfileError } from '@/features/editableProfileCard/model/selectors/getProfileError/getProfileError'
+import { getProfileIsLoading } from '@/features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading'
+import { getProfileReadonly } from '@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly'
+import { getProfileValidateErrors } from '@/features/editableProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+import { fetchProfileData } from '@/features/editableProfileCard/model/services/fetchProfileData/fetchProfileData'
 import {
     profileActions,
     profileReducer,
-} from 'features/editableProfileCard/model/slice/profileSlice'
-import { ProfileCard } from 'entities/Profile'
-import { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts'
+} from '@/features/editableProfileCard/model/slice/profileSlice'
+import { ProfileCard } from '@/entities/Profile'
+import { ValidateProfileError } from '@/features/editableProfileCard/model/consts/consts'
 import {
     DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { EditableProfileCardHeader } from './EditableProfileCardHeader/EditableProfileCardHeader'
-import { VStack } from 'shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
 
 interface EditableProfileCardProps {
     className?: string

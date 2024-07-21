@@ -18,7 +18,7 @@
 	" create react component": {
 		"prefix": "rc",
 		"body": [
-		  "import { classNames } from 'shared/lib/classNames/classNames'",
+		  "import { classNames } from '@/shared/lib/classNames/classNames'",
 		  "",
 		  "import cls from './${TM_FILENAME_BASE}.module.scss'",
 		  "",

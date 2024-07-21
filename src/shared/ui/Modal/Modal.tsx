@@ -31,10 +31,6 @@ export const Modal = (props: ModalProps) => {
         // [cls[theme]]: true,
     }
 
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation()
-    }
-
     if (lazy && !isMounted) {
         return null
     }
@@ -43,9 +39,7 @@ export const Modal = (props: ModalProps) => {
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <Overlay onClick={close} />
-                <div className={cls.content} onClick={onContentClick}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     )

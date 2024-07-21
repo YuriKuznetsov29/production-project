@@ -10,12 +10,7 @@ const MainPage = () => {
     const onChange = (val: string) => {
         setValue(val)
     }
-    return (
-        <Page>
-            {t('Главная страница')}
-            <RatingCard feedbackTitle="123" hasFeedback />
-        </Page>
-    )
+    return <Page>{t('Главная страница')}</Page>
 }
 
 export default MainPage
